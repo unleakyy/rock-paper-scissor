@@ -4,76 +4,104 @@
   padding: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+body {
+  background-color: hsla(0, 0%, 45%, 1);
+}
 .master {
-  background-color: hsla(0, 0%, 45%, 0.8);
+  background-color: hsla(0, 0%, 45%, 1);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  row-gap: 20px;
   min-width: 240px;
   padding: 20px;
-  position: relative;
+  color: white;
+}
+
+section {
+  text-align: center;
 }
 
 h1 {
   text-align: center;
 }
 
-/* h1::before {
-  content: "Battles Won: 0";
-  top: 1%;
-  left: 1%;
-  position: absolute;
-  font-size: 0.7rem;
-} */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
 
 button {
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  width: 130px;
   border-radius: 50%;
   border: none;
+}
+
+.computer > button {
+  background-color: hsla(0, 0%, 80%, 0.8);
+}
+
+.user.container {
+  position: relative;
+}
+
+.userBtns {
   cursor: pointer;
-  background-color: white;
-  transition: background-color 0.3s ease-in-out;
 }
 
-button:hover {
+.userBtns:hover {
   background-color: hsla(221, 87%, 50%, 1);
-  transition: all 0.3s ease-in-out;
 }
 
-button:active {
+.userBtns:active {
   background-color: hsla(221, 87%, 50%, 0.2);
-}
-
-.buttons {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  min-width: 200px;
-  max-width: 800px;
-  margin-inline: auto;
 }
 
 #scissor,
 #rock,
 #paper {
   background-image: url(../images/signs.png);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  transition: background-position 2s, background-color 0.5s;
 }
 
 #scissor {
-  background-repeat: no-repeat;
   background-position: -5% -25%;
-  background-size: 200%;
 }
 
 #rock {
-  background-repeat: no-repeat;
   background-position: 115% 10%;
-  background-size: 200%;
 }
 #paper {
-  background-repeat: no-repeat;
   background-position: 25% 120%;
-  background-size: 200%;
+}
+
+.center {
+  position: absolute;
+  transition: position 2s ease-in-out;
+}
+
+.fadeOut {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
